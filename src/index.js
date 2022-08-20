@@ -66,9 +66,6 @@ function angularizeDirective(Component, directiveName, angularApp, bindings) {
         // Add $scope
         scope.$scope = scope;
 
-        // First render - needed?
-        ReactDOM.createRoot(element[0]).render(React.createElement(Component, scope));
-
         // Watch for any changes in bindings, then rerender
         const keys = [];
         for (let bindingKey of Object.keys(bindings)) {
