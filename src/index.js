@@ -80,7 +80,7 @@ function angularizeDirective(Component, directiveName, angularApp, bindings) {
           }
         }
 
-        const root = ReactDOM.createRoot($element[0]);
+        const root = ReactDOM.createRoot(element[0]);
         scope.$watchGroup(keys, () => {
           root.render(React.createElement(Component, scope));
         });
