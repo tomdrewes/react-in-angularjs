@@ -45,8 +45,9 @@ function angularize(Component, componentName, angularApp, bindings) {
           };
         }
 
+        const root = ReactDOM.createRoot($element[0]);
         this.$onChanges = () => {
-          ReactDOM.createRoot($element[0]).render(React.createElement(Component, this));
+          root.render(React.createElement(Component, this));
         };
       },
     ],
@@ -79,8 +80,9 @@ function angularizeDirective(Component, directiveName, angularApp, bindings) {
           }
         }
 
+        const root = ReactDOM.createRoot($element[0]);
         scope.$watchGroup(keys, () => {
-          ReactDOM.createRoot(element[0]).render(React.createElement(Component, scope));
+          root.render(React.createElement(Component, scope));
         });
       },
     };
